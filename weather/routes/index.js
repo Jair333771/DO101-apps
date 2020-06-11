@@ -4,6 +4,7 @@ const fetch = require("node-fetch");
 require('dotenv').config();
 const OWM_API_KEY = process.env.OWM_API_KEY || 'invalid_key';
 const UNITS = process.env.UNITS || 'metric';
+const TITLE = process.env.TITLE;
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -26,7 +27,7 @@ router.post('/get_weather', async function (req,res) {
     }
     else {
       let unit_hex = (UNITS == 'imperial') ? '&#8457' : '&#8451';
-      res.render('index', {weather: weather, error: null, units: unit_hex});
+      res.render('index', {weather: weather, error: null, units: unit_hex, title: TITLE});
     }
   }
   catch (err) {

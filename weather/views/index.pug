@@ -24,6 +24,7 @@ block content
             .panel.panel-primary
               .panel-heading Weather for: #{weather.name}, #{weather.sys.country}
               .panel-body
+               P #{title}
                p Current Temperature = #{weather.main.temp} !{units}, #{weather.weather[0].description}
                p Humidity = #{weather.main.humidity} &#37;
                p Min = #{weather.main.temp_min} !{units}
